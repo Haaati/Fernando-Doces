@@ -1,0 +1,384 @@
+/* ============================================
+   ARQUIVO CSS - ESTILOS DA PÁGINA
+   ============================================
+   O CSS controla a APARÊNCIA dos elementos HTML.
+   Usamos "seletores" para escolher quais elementos estilizar.
+   Exemplo: .classe estiliza todos os elementos com class="classe"
+*/
+
+/* --------------------------------------------
+   RESET E CONFIGURAÇÕES GERAIS
+   --------------------------------------------
+   * = seletor universal (afeta todos os elementos)
+   margin e padding zerados deixam o layout mais previsível
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing: border-box faz width incluir padding e borda */
+}
+
+/* 
+  body: estilos aplicados a todo o corpo da página
+  font-family: usa a fonte padrão do sistema
+*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  /* line-height: espaço entre linhas do texto */
+  color: #333;
+  /* color: cor do texto (cinza escuro) */
+}
+
+/* --------------------------------------------
+   HEADER (Cabeçalho)
+   --------------------------------------------
+   background: cor de fundo
+   padding: espaço interno
+   box-shadow: sombra sutil para dar profundidade
+*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #F7C340;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 5px rgba(55, 36, 5, 0.1);
+}
+
+/* 
+  .header-conteudo: organiza logo e menu na mesma linha
+  display: flex = ativa o FLEXBOX (layout em linha ou coluna)
+  justify-content: space-between = logo à esquerda, menu à direita
+  max-width + margin: centraliza o conteúdo e limita a largura
+*/
+.header-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 
+  .menu: container dos links de navegação
+  display: flex deixa os links em linha, com espaço entre eles
+*/
+.menu {
+  display: flex;
+  gap: 3rem;
+  /* gap: espaço entre os itens (só funciona com flex) */
+}
+
+.menu-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  /* text-decoration: none remove o sublinhado do link */
+}
+
+.menu-link:hover {
+  /* :hover = quando o mouse passa por cima */
+  text-decoration: underline;
+}
+
+/* --------------------------------------------
+   SEÇÃO HERO (Área principal de destaque)
+   --------------------------------------------
+   min-height: altura mínima para ocupar boa parte da tela
+   display: flex + align-items e justify-content: centraliza o conteúdo
+*/
+.hero {
+  background-color: #ecf0f1;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.hero-conteudo {
+  max-width: 600px;
+}
+
+.hero-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.hero-texto {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* --------------------------------------------
+   BOTÃO
+   --------------------------------------------
+   display: inline-block = o link se comporta como um botão
+   padding: espaço interno (altura e largura do botão)
+   border-radius: cantos arredondados
+*/
+.botao {
+  display: inline-block;
+  background-color: #edb408;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+  background-color: #e0a020;
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------
+   BOTÃO DE CONTATO
+   --------------------------------------------
+   Esta classe é aplicada ao link "Fale Conosco no WhatsApp".
+*/
+.botao-contato {
+  display: inline-block;
+  background-color: #35d06e; /* verde whatsapp */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-contato:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05); /* leve aumento de tamanho no hover */
+}
+
+/* --------------------------------------------
+   CONTAINER (Usado em várias seções)
+   --------------------------------------------
+   Centraliza e limita a largura do conteúdo.
+   Assim o texto não fica largo demais em telas grandes.
+*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --------------------------------------------
+   SEÇÕES SOBRE, SERVIÇOS E CONTATO
+   --------------------------------------------
+   padding: espaço vertical e horizontal
+*/
+.sobre {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.servicos {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.contato {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+/* Título padrão das seções */
+.secao-titulo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color:  #2c3e50;
+  font-size: 2rem;
+}
+
+.secao-texto {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #444444;
+}
+
+/* --------------------------------------------
+   CARDS (Caixas dos serviços)
+   --------------------------------------------
+   .cards: container que usa FLEXBOX para colocar os 3 cards em linha
+   flex-wrap: wrap = se não couber, os cards vão para a linha de baixo
+   gap: espaço entre os cards
+*/
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 
+  .card: cada caixinha de serviço
+  flex: 1 1 280px = pode crescer, encolher, largura mínima 280px
+  Assim os 3 cards ficam lado a lado em telas grandes
+*/
+.card {
+  flex: 1 1 280px;
+  max-width: 350px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #d7d7d7; /* linha cinza para destacar do fundo */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* deixa espaço entre o conteúdo e o botão */
+  /* box-shadow: sombra para dar efeito de "elevação" */
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 10px 15px 20px #825b1433;
+  border: #e4ca61 2px solid;
+  transform: translateY(-4px);
+}
+
+.card-botao {
+  display: inline-block;
+  background-color: #edb408;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: auto;
+  align-self: flex-start; /* evita que estique na largura */
+  max-width: fit-content; /* torna o tamanho dependente do texto */
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.card-botao:hover {
+  background-color: #e0a020;
+  transform: scale(1.05);
+  box-shadow: 10px 15px 20px #825b1433;
+}
+
+.card-titulo {
+  margin-bottom: 0rem; /* menor distância entre título e texto */
+  color: #2c3e50;
+  font-size: 1.25rem;
+}
+
+.card-texto {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------
+   MODAL DE DESCRIÇÃO (usado pelos cards)
+   --------------------------------------------
+*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --------------------------------------------
+   FOOTER (Rodapé)
+   --------------------------------------------
+*/
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.footer-texto {
+  font-size: 0.9rem;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-titulo{
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.card-descricao{
+  display: none;
+  padding: 15px;
+  background: white;
+}
+
+.card.ativo .card-descricao{
+  display: block;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1024px){
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .cards{
+    grid-template-columns: 1fr;
+  }
+}
