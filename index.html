@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- 
+  Declaração do tipo de documento.
+  Todo documento HTML5 começa com esta linha.
+-->
+<html lang="pt-BR">
+<!-- 
+  Tag <html>: raiz do documento.
+  lang="pt-BR" indica que o conteúdo está em português do Brasil.
+-->
+
+<head>
+  <!-- 
+    <head>: contém informações sobre a página (não aparecem na tela).
+    Aqui ficam: título, links para CSS, meta tags, etc.
+  -->
+  <meta charset="UTF-8">
+  <!-- charset=UTF-8 permite usar acentos e caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- viewport: ajuda a página a se adaptar em celulares -->
+  <title>Fernando doces</title>
+  <!-- Título que aparece na aba do navegador -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Link para o arquivo CSS que estiliza a página -->
+   <link rel="js" href="main.js">
+</head>
+
+<body>
+  <!-- 
+    <body>: contém todo o conteúdo visível da página.
+    Tudo que o usuário vê fica dentro do body.
+  -->
+
+  <!-- ========== HEADER ========== -->
+  <!-- 
+    Header: cabeçalho da página.
+    Geralmente contém logo e menu de navegação.
+    Usamos "class" para dar um nome ao elemento e estilizá-lo no CSS.
+  -->
+  <header class="header">
+    <div class="header-conteudo">
+      <!-- div: "division" - agrupa elementos sem significado especial -->
+      <h1 class="logo">Fernando doces</h1>
+      <!-- h1: título principal (só um por página é o ideal) -->
+
+      <nav class="menu">
+        <!-- nav: seção de navegação com links -->
+        <a href="#home" class="menu-link">Início</a>
+        <a href="#sobre" class="menu-link">Sobre</a>
+        <a href="#servicos" class="menu-link">Produtos</a>
+        <a href="#contato" class="menu-link">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== SEÇÃO HERO (Principal) ========== -->
+  <!-- 
+    section: agrupa conteúdo relacionado.
+    id: identificador único (usado nos links do menu para rolar até aqui).
+  -->
+  <section id="home" class="hero">
+    <div class="hero-conteudo">
+      <h2 class="hero-titulo">Interessado? é só pedir!</h2>
+      <!-- h2: subtítulo -->
+      <p class="hero-texto">
+        Escolha o produto, selecione a quantidade e confirme pelo whatsapp.
+      </p>
+      <!-- p: parágrafo -->
+      <a href="#servicos" class="botao">Ver Produtos</a>
+      <!-- a: link. href="#sobre" leva à seção Sobre na mesma página -->
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO SOBRE ========== -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <!-- "container" é uma classe comum para limitar a largura e centralizar -->
+      <h2 class="secao-titulo">Sobre Nós</h2>
+      <p class="secao-texto">
+        Otimizamos nossa produção e o controle de pedidos para garantir qualidade e agilidade no dia a dia.
+        Seguimos com nossa produção artesanal de bolos de cenoura, pães de mel, bombons e bolachinhas,
+        unindo organização tecnológica ao sabor que você já conhece.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO PRODUTOS ========== -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2 class="secao-titulo">Nossos Produtos</h2>
+      <p class="secao-texto">
+        Nossos produtos do catálogo regular. Quase sempre disponíveis!
+      </p>
+
+      <!-- div com classe "cards": agrupa os 3 cards -->
+      <div class="cards">
+        <!-- Card 1 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Pão de Mel</h3>
+          <p class="card-texto">Massa macia com mel puro e recheios variados, finalizados com cobertura de chocolate</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Bolos de Cenoura</h3>
+          <p class="card-texto">Receita tradicional com recheio de brigadeiro caseiro e cobertos de chocolate.</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Bolo Vermelho</h3>
+          <p class="card-texto">Massa Red Velvet com recheio de leite ninho e geleia de Morango.</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Bombons</h3>
+          <p class="card-texto">Variedade de sabores com recheios caprichados.</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Bolachinhas</h3>
+          <p class="card-texto">Variedade de sabores e texturas, massas artesanais que derretem na boca.</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" data-description="aaaaa">
+          <h3 class="card-titulo">Geladinho</h3>
+          <p class="card-texto">aaaaa</p>
+          <a href="#servicos" class="card-botao">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PRODUTOS SAZONAIS-->
+  <section class="produtos-sazonais">
+    <div class="container">
+      <h2 class="secao-titulo">Produtos Sazonais</h2>
+      <p class="secao-texto">
+        Disponíveis por tempo limitado!
+      </p>
+
+      <div class="cards">
+        <div class="card" data-description="aaaa">
+          <h3 class="card-titulo">Doce de abóbora</h3>
+          <p class="card-texto">Descrição rápida do item.</p>
+          <a href="#Servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <div class="card" data-description="Bebidas geladas e especiais para o verão.">
+          <h3 class="card-titulo">Geleia de laranja</h3>
+          <p class="card-texto">Outra breve descrição.</p>
+          <a href="#Servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <div class="card" data-description="Doces e salgados com ingredientes típicos da época.">
+          <h3 class="card-titulo">Geléia de amora</h3>
+          <p class="card-texto">Texto curto para apresentar o produto.</p>
+          <a href="#Servicos" class="card-botao">Saiba Mais</a>
+        </div>
+
+        <div class="card" data-description="Doces e salgados com ingredientes típicos da época.">
+          <h3 class="card-titulo">Geléia de morango</h3>
+          <p class="card-texto">Texto curto para apresentar o produto.</p>
+          <a href="#Servicos" class="card-botao">Saiba Mais</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO CONTATO ========== -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2 class="secao-titulo">Entre em Contato</h2>
+      <p class="secao-texto">
+        Ficou interessado? Entre em contato conosco e tire suas dúvidas.
+      </p>
+      <a href="https://wa.me/5541991073771?text=Olá,%20tenho%20interesse%20no%20produto!" target="_blank"
+        class="botao-contato">Fale Conosco no WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <!-- 
+    footer: rodapé da página.
+    Geralmente contém copyright, links secundários, etc.
+  -->
+  <footer class="footer">
+    <p class="footer-texto">&copy; 2025 Fernando doces. Todos os direitos reservados.</p>
+    <!-- &copy; é o símbolo de copyright (©) em HTML -->
+  </footer>
+
+  <!-- ========== MODAL DE DESCRIÇÃO ========== -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <!-- script para abrir/fechar modal ao clicar nos cards -->
+  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalClose = document.getElementById('modal-close');
+
+    function openModal(title, description) {
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modal.classList.add('show');
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+    }
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('.card-titulo').textContent;
+        const description = card.dataset.description || card.querySelector('.card-texto').textContent;
+        openModal(title, description);
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    const titulos = document.querySelectorAll(".card-titulo");
+
+titulos.forEach(titulo => {
+  titulo.addEventListener("click", () => {
+    const card = titulo.parentElement;
+    card.classList.toggle("ativo");
+  });
+});
+
+  </script>
+</body>
+
+</html>
